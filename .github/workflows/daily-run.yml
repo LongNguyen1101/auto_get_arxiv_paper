@@ -2,7 +2,7 @@ name: Daily arXiv Papers Summary
 
 on:
   schedule:
-    - cron: '0 1 * * *' # Chạy lúc 1:00 UTC, tức 8:00 sáng giờ Việt Nam
+    - cron: '0 0 * * *' # Chạy lúc 1:00 UTC, tức 8:00 sáng giờ Việt Nam
   workflow_dispatch: # Thêm để chạy thủ công nếu cần
 
 jobs:
@@ -30,4 +30,4 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         GITHUB_ACTIONS: "true" # Biến này giúp code biết đang chạy trên GitHub
       run: |
-        python run.py "http://export.arxiv.org/api/query" "cat:cs.AI" "submittedDate" "descending" "10"
+        python run.py 
